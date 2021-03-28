@@ -26,12 +26,18 @@ header {
 .navbar_wrapper {
     width: 100%;
     border: 1px solid black;
-    background-image: url(../images/home_background_metro.jpg);
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(../images/home_background_metro.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: auto;
+    background-attachment: fixed;
 }
 
 nav {
@@ -41,6 +47,8 @@ nav {
     justify-content: space-between;
     padding-top: 1rem;
     font-weight: 700;
+    position: sticky;
+    top: 0;
 }
 
 nav .navRight ul{
