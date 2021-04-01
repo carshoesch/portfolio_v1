@@ -1,6 +1,5 @@
 /* Import des fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
 /* general settings */
 * {
     padding: 0;
@@ -12,7 +11,7 @@
 
 html {
     font-size: 16px;
-    font-family: 'Lato', sans-serif
+    font-family: 'Raleway', sans-serif
 }
 
 header {
@@ -63,32 +62,69 @@ nav .navRight .navbar_menu{
 
 nav .navRight .navbar_menu:hover{
     padding-bottom: .5rem;
-    border-bottom: 1px solid red;
-    color: red;
+    border-bottom: 1px solid crimson;
+    color: crimson;
     transition: .5s;
 }
-
 
 /* hero section */
 .hero_section {
     width: 80%;
     margin: auto;
-}
-#hook {
-    color: white;
-    /* line-height: 1.5rem; */
     transform: translateY(40vh);
-    font-size: 4rem;
+    font-size: 2.5rem;
     min-height: 30rem;
 }
 
+.hero_section h1 {
+    position: relative;
+    display: block;
+    color: transparent;
+    width: fit-content;
+    animation: textRevealColour .5s ease forwards;
+    animation-delay: 1s;
+    font-weight: 300;
+}
+
+.hero_section h1:nth-child(1){
+    animation-delay: 1s;
+}
+.hero_section h1:nth-child(2){
+    animation-delay: 2s;
+}
+.hero_section h1:nth-child(3){
+    animation: textRevealColourName .5s ease forwards;
+    animation-delay: 3s;
+}
+
+.hero_section h1 span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: crimson;
+    animation: textRevealBox 1s ease;
+    animation-delay: .3s;
+}
+
+.hero_section h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+.hero_section h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+.hero_section h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
 .hero_button {
-    transform: translateY(10vh);
-    margin-top: 1rem;
+    transform: translateY(5vh);
+    text-transform: uppercase;
 }
 
 .hero_button a {
-    border: 1px solid red;
+    border: 1px solid crimson;
     color: white;
     padding: .8rem;
     font-size: 1.5rem;
@@ -97,17 +133,38 @@ nav .navRight .navbar_menu:hover{
 }
 
 .hero_button a:hover {
-    background-color: red;
+    background-color: crimson;
     color: white;
     transition: .5s;
 }
 
-/* main hero section */
-
 
 /* special stuff */
 .special_letter {
-    color: red;
+    color: crimson;
+    animation: textReveal 1s ease forwards;
 }
 
+/* keyframes */
+@keyframes textRevealBox {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
 
+@keyframes textRevealColour {
+    100%{
+        color: white;
+    }
+}
+@keyframes textRevealColourName {
+    100%{
+        color: crimson;
+        font-weight: 500;
+    }
+}
