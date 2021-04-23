@@ -71,7 +71,7 @@ nav .navRight .navbar_menu:hover{
 .hero_section {
     width: 80%;
     margin: auto;
-    transform: translateY(40vh);
+    transform: translateY(35vh);
     font-size: 2.5rem;
     min-height: 30rem;
 }
