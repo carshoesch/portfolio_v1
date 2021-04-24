@@ -187,7 +187,7 @@ nav .navRight .navbar_menu:hover{
     }
 
     nav .navRight ul {
-        position:fixed;
+        position: fixed;
         width: 100%;
         height: 30vh;
         background: #262626;
@@ -197,13 +197,36 @@ nav .navRight .navbar_menu:hover{
         text-align: center;
         display: none;
         line-height: 4rem;
-        transition: all .5s;
+        animation: toggleMobileNavOn .5s ease;
     }
 
     .navRight ul.show{
         display: block;
         left: 0;
-        transition: .5s;
+    }
+    
+    .navRight ul.hide{
+        left: -100%;
+        animation: toggleMobileNavOff .5s ease;
+    }
+
+    @keyframes toggleMobileNavOn {
+        0%{
+            left: -100%;
+        }
+        100%{
+            left: 0;
+        }
+    }
+
+    @keyframes toggleMobileNavOff {
+        100%{
+            left: 0;
+        }
+        0%{
+            left: -100%;
+        }
+
     }
 
 }
